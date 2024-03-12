@@ -20,8 +20,10 @@ def Evaluate(filename, question_number):
     return accuracy
 
 def calc_uncertainty(metric,sample):
-    return np.sqrt((1.0 - metric)/len(sample)) * 100.
-
+    """
+    returns the uncertainity in measuring the metric for the given sample
+    """
+    return np.sqrt(metric * (1 - metric)/len(samples))*100.
 def evaluate(filepath, q):
     """
     src code From Kishan Rajput:
